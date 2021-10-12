@@ -64,8 +64,8 @@ async function renderDataToHTML(event, arg) {
                 <div >
                  <table>
                 <tr>
-                    <td> <div style="${arg.line.style}">${arg.line.style}</div></td>
-                    <td> <div style="${arg.line.style}">second</div></td>
+                    <td> <div >first</div></td>
+                    <td> <div >second</div></td>
                    
                 </tr>
                 </table>
