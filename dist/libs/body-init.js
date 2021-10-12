@@ -61,11 +61,11 @@ async function renderDataToHTML(event, arg) {
             try {
                 
                 body.append(`
-                <div >
+                <div style='width:100%;'>
                  <table>
                 <tr>
                     <td> <div >first</div></td>
-                    <td> <div >second</div></td>
+                    <td> <div style="${arg.line.style}">second</div></td>
                    
                 </tr>
                 </table>
