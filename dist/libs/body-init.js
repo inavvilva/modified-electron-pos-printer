@@ -61,25 +61,14 @@ async function renderDataToHTML(event, arg) {
             try {
                 
                 body.append(`
-                <div >
+               
                 <div style="content: "";
                 display: table;
-                clear: both;">
+                clear: both;
+                font-family:Helvetica, sans-serif;">
                     <div style="${arg.line.style}">
-                        <h2>Column 1</h2>
-                        <p>Some text..</p>
-                    </div>
-                    <div style="${arg.line.style}">
-                        <h2>Column 2</h2>
-                        <p>Some text..</p>
-                    </div>
-                    </div>
-                <table style='margin-left: auto; margin-right: auto ;font-family:Helvetica, sans-serif';border: none;>
-                        <tr >
-                        <td style="text-align:center;padding:16px;overflow:hidden;" > 
-                        <div style="${arg.line.style}">
                         <p style="${arg.line.headerStyle1}">${arg.line.headerText1}</p>
-                            <img class="barCode${arg.lineIndex}1"  style="text-align:center;"
+                        <img class="barCode${arg.lineIndex}1"  style="text-align:center;"
                         jsbarcode-value="${arg.line.value1}"
                         jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
                         jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
@@ -89,10 +78,8 @@ async function renderDataToHTML(event, arg) {
                         <p style="${arg.line.itemStyle1}">${arg.line.value1}</p>
                         <p style="${arg.line.lineStyle1}">${arg.line.additionalText1}</p>
                         <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
-                       </div>
-                        </td>
-                        <td style="text-align:center;padding:16px;overflow:hidden" >
-                        <div style="${arg.line.style}">
+                    </div>
+                    <div style="${arg.line.style}">
                         <p style="${arg.line.headerStyle2}">${arg.line.headerText2}</p>
                         <img class="barCode${arg.lineIndex}2" style="text-align:center;" 
                         jsbarcode-value="${arg.line.value2}"
@@ -104,11 +91,9 @@ async function renderDataToHTML(event, arg) {
                         <p style="${arg.line.itemStyle1}">${arg.line.value2}</p>
                         <p style="${arg.line.lineStyle2}">${arg.line.additionalText2}</p>
                         <p style="${arg.line.footerStyle2}">${arg.line.footerText2}</p>
-                        </div>
-                        </td>
-                        </tr>
-                </table>
-                </div>
+                    </div>
+                    </div>
+               
    
                 `);
                 JsBarcode(`.barCode${arg.lineIndex}1`).init();
