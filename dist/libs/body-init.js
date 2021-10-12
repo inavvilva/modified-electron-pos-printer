@@ -61,20 +61,25 @@ async function renderDataToHTML(event, arg) {
             try {
                 
                 body.append(`
-                <div style='width:100%;'>
-                 <table style='margin-left: auto; margin-right: auto ;'>
-                <tr>
-                    <td> <div style="${arg.line.style}">first</div></td>
-                    <td> <div style="${arg.line.style}">second</div></td>
-                   
-                </tr>
-                </table>
+                <div >
+                <div style="content: "";
+                display: table;
+                clear: both;">
+                    <div style="${arg.line.style}">
+                        <h2>Column 1</h2>
+                        <p>Some text..</p>
+                    </div>
+                    <div style="${arg.line.style}">
+                        <h2>Column 2</h2>
+                        <p>Some text..</p>
+                    </div>
+                    </div>
                 <table style='margin-left: auto; margin-right: auto ;font-family:Helvetica, sans-serif';border: none;>
                         <tr >
                         <td style="text-align:center;padding:16px;overflow:hidden;" > 
                         <div style="${arg.line.style}">
                         <p style="${arg.line.headerStyle1}">${arg.line.headerText1}</p>
-                            <img class="barCode${arg.lineIndex}1"  style="text-align:center;width:60%"
+                            <img class="barCode${arg.lineIndex}1"  style="text-align:center;"
                         jsbarcode-value="${arg.line.value1}"
                         jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
                         jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
@@ -89,7 +94,7 @@ async function renderDataToHTML(event, arg) {
                         <td style="text-align:center;padding:16px;overflow:hidden" >
                         <div style="${arg.line.style}">
                         <p style="${arg.line.headerStyle2}">${arg.line.headerText2}</p>
-                        <img class="barCode${arg.lineIndex}2" style="text-align:center;width:60%" 
+                        <img class="barCode${arg.lineIndex}2" style="text-align:center;" 
                         jsbarcode-value="${arg.line.value2}"
                         jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
                         jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
