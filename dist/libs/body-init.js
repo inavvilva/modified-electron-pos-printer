@@ -59,13 +59,14 @@ async function renderDataToHTML(event, arg) {
         return;
         case 'DoubleBarCode':
             try {
+                
                 body.append(`
                 <div >
                 <table style='margin-left: auto; margin-right: auto ;font-family:Helvetica, sans-serif';border: none;>
-                        <tr style="border-bottom: none;">
+                        <tr >
                         <td style="text-align:center;padding:16px;overflow:hidden;" > 
                         <div style="${arg.line.style}">
-                        <p style="${arg.line.headerStyle1}">${arg.line.headerText1}</p>
+                        <p style="${arg.line.headerStyle1}">testheader${arg.line.headerText1}</p>
                             <img class="barCode${arg.lineIndex}1"  style="text-align:center;width:60%"
                         jsbarcode-value="${arg.line.value1}"
                         jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
