@@ -9,24 +9,24 @@ requires electron >= 4.x.x.
 
 ### Installation
 ```bash
-$ npm install electron-pos-printer
-$ yarn add electron-pos-printer
+$ npm install modified-electron-pos-printer
+$ yarn add modified-electron-pos-printer
 ```
 ### Usage
 #### In main process
 ```js
-const {PosPrinter} = require("electron-pos-printer");
+const {PosPrinter} = require("modified-electron-pos-printer");
 ```
 #### In render process
 ```js
-const {PosPrinter} = require('electron').remote.require("electron-pos-printer");
+const {PosPrinter} = require('electron').remote.require("modified-electron-pos-printer");
 ```
-### Demo
+<!-- ### Demo
 
-Check out this [Demo](https://github.com/fssonca/electron-printer ) by [fssonca](https://github.com/fssonca) 
+Check out this [Demo](https://github.com/fssonca/electron-printer ) by [fssonca](https://github.com/fssonca)  -->
 
 ```js
-const {PosPrinter} = require("electron-pos-printer");
+const {PosPrinter} = require("modified-electron-pos-printer");
 const path = require("path");
 
 const options = {
@@ -252,9 +252,8 @@ PosPrinter.print(data, options)
 | tableFooterStyle | (string) set custom style to the table footer |
 
 ## Author
- - Hubert Formin
- - hformin@gmail.com
- - Twitter: @hformin
+ - Inav
+ - inavvilva@gmail.com
  
  [<img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" >](https://www.buymeacoffee.com/hformin)
  

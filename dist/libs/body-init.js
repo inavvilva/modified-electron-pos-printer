@@ -57,18 +57,160 @@ async function renderDataToHTML(event, arg) {
                 event.sender.send('render-line-reply', {status: false, error: e.toString()});
             }
         return;
+        case 'DoublebarCode':
+            try {
+                body.append(`
+                <div >
+                <table style='margin-left: auto; margin-right: auto ;font-family:Helvetica, sans-serif';border: none;>
+                        <tr style="border-bottom: none;">
+                        <td style="text-align:center;padding:16px;overflow:hidden;" > 
+                        <div style="${arg.line.style}">
+                        <p style="${arg.line.headerStyle1}">${arg.line.headerText1}</p>
+                            <img class="barCode${arg.lineIndex}1"  style="text-align:center;width:60%"
+                        jsbarcode-value="${arg.line.value1}"
+                        jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
+                        jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
+                        jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
+                        jsbarcode-margin="0"
+                        jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
+                        <p style="${arg.line.itemStyle1}">${arg.line.value1}</p>
+                        <p style="${arg.line.lineStyle1}">${arg.line.additionalText1}</p>
+                        <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
+                       </div>
+                        </td>
+                        <td style="text-align:center;padding:16px;overflow:hidden" >
+                        <div style="${arg.line.style}">
+                        <p style="${arg.line.headerStyle2}">${arg.line.headerText2}</p>
+                        <img class="barCode${arg.lineIndex}1" style="text-align:center;width:60%" 
+                        jsbarcode-value="${arg.line.value2}"
+                        jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
+                        jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
+                        jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
+                        jsbarcode-margin="0"
+                        jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
+                        <p style="${arg.line.itemStyle1}">${arg.line.value2}</p>
+                        <p style="${arg.line.lineStyle2}">${arg.line.additionalText2}</p>
+                        <p style="${arg.line.footerStyle2}">${arg.line.footerText2}</p>
+                        </div>
+                        </td>
+                        </tr>
+                </table>
+                </div>
+   
+                `);
+                JsBarcode(`.barCode${arg.lineIndex}1`).init();
+                JsBarcode(`.barCode${arg.lineIndex}2`).init();
+                // send
+
+                event.sender.send('render-line-reply', {status: true, error: null});
+            } catch(e) {
+                event.sender.send('render-line-reply', {status: false, error: e.toString()});
+            }
+        return;
+        case 'twoLabelbarCode':
+            try {
+                body.append(`
+                <div >
+                <table style='margin-left: auto; margin-right: auto ;font-family:Helvetica, sans-serif';border: none;>
+                        <tr style="border-bottom: none;">
+                        <td style="text-align:center;padding:16px;overflow:hidden;" > 
+                        <div style="${arg.line.style}">
+                        <p style="${arg.line.headerStyle1}">${arg.line.headerText1}</p>
+                            <img class="barCode${arg.lineIndex}1"  style="text-align:center;width:60%"
+                        jsbarcode-value="${arg.line.value1}"
+                        jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
+                        jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
+                        jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
+                        jsbarcode-margin="0"
+                        jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
+                        <p style="${arg.line.itemStyle1}">${arg.line.value1}</p>
+                        <p style="${arg.line.lineStyle1}">${arg.line.additionalText1}</p>
+                        <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
+                       </div>
+                        </td>
+                        <td style="text-align:center;padding:16px;overflow:hidden" >
+                        <div style="${arg.line.style}">
+                       
+                        </div>
+                        </td>
+                        </tr>
+                </table>
+                </div>
+   
+                `);
+                JsBarcode(`.barCode${arg.lineIndex}1`).init();
+                JsBarcode(`.barCode${arg.lineIndex}2`).init();
+                // send
+
+                event.sender.send('render-line-reply', {status: true, error: null});
+            } catch(e) {
+                event.sender.send('render-line-reply', {status: false, error: e.toString()});
+            }
+        return;
+        case 'SinglebarCode':
+            try {
+                body.append(`
+                <div style="border: none;">
+                <table style='margin-left: auto; margin-right: auto ;font-family:Helvetica, sans-serif';border: none;>
+                        <tr style="border-bottom: none;">
+                        <td style="text-align:center;padding:16px;overflow:hidden;" > 
+                        <div style="${arg.line.style}">
+                        <p style="${arg.line.headerStyle1}">${arg.line.headerText1}</p>
+                            <img class="barCode${arg.lineIndex}"  style="text-align:center;width:60%"
+                        jsbarcode-value="${arg.line.value1}"
+                        jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
+                        jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
+                        jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
+                        jsbarcode-margin="0"
+                        jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
+                        <p style="${arg.line.itemStyle1}">${arg.line.value1}</p>
+                        <p style="${arg.line.lineStyle1}">${arg.line.additionalText1}</p>
+                        <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
+                       </div>
+                        </td>
+                        </tr>
+                </table>
+                </div>
+   
+                `);
+                JsBarcode(`.barCode${arg.lineIndex}`).init();
+               
+                // send
+
+                event.sender.send('render-line-reply', {status: true, error: null});
+            } catch(e) {
+                event.sender.send('render-line-reply', {status: false, error: e.toString()});
+            }
+        return;
         case 'barCode':
             try {
-                body.append(`<div style="width: 100%;text-align: ${arg.line.position ? arg.line.position : 'left'}"class="barcode-container" style="text-align: center;width: 100%;">
-                    <img class="barCode${arg.lineIndex}"  style="${arg.line.style}"
-                jsbarcode-value="${arg.line.value}"
-                jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
-                jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
-                jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 12}"
-                jsbarcode-margin="0"
-                jsbarcode-displayvalue="${!!arg.line.displayValue}"/></div>`);
+                body.append(`
+                <div style="width:100%;font-family:Helvetica, sans-serif;display: flex;
+                flex-direction: row;                
+                justify-content: center;
+                align-items: center;
+                text-align:center">
+               
+                        <div style="${arg.line.style}">
+                        <p style="${arg.line.headerStyle1}">${arg.line.headerText1}</p>
+                            <img class="barCode${arg.lineIndex}" style="text-align:center;width:50%"
+                        jsbarcode-value="${arg.line.value1}"
+                        jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
+                        jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
+                        jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
+                        jsbarcode-margin="0"
+                        jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
+                        <p style="margin-top: -3px;font-size:6px">${arg.line.value1}</p>
+                        <p style="${arg.line.lineStyle1}">${arg.line.additionalText1}</p>
+                        <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
+                       </div>
+                      
+                </div>
+   
+                `);
                 JsBarcode(`.barCode${arg.lineIndex}`).init();
                 // send
+
                 event.sender.send('render-line-reply', {status: true, error: null});
             } catch(e) {
                 event.sender.send('render-line-reply', {status: false, error: e.toString()});
@@ -131,11 +273,12 @@ async function renderDataToHTML(event, arg) {
                                         })
                                     return;
                                 case 'text':
-                                    rowTr.append(generateTableCell(colArg));
+                                    rowTr.append(generateTableCell(colArg+"s its worrking"));
                                     return;
+                                
                             }
                         } else {
-                            const th = $(`<td>${colArg}</td>`);
+                            const th = $(`<td>${colArg}else part</td>`);
                             rowTr.append(th);
                         }
                     });

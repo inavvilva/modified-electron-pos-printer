@@ -1,0 +1,43 @@
+{
+  "name": "modified-electron-pos-printer",
+  "version": "1.0.0",
+  "description": "Electron thermal 58mm printer",
+  "main": "dist/index.js",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "electron": "^7.3.2",
+    "mocha": "^6.2.3",
+    "spectron": "^9.0.0",
+    "typescript": "^3.9.6",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {},
+  "scripts": {
+    "build": "tsc",
+    "demo": "electron ./demo/",
+    "pack": "webpack --config ./webpack.config.js",
+    "start": "npm run build && npm run demo",
+    "test": "mocha",
+    "test:all": "mocha -R mocha-jenkins-reporter --timeout 20000 \"./src/test/**/*test-*.js\"",
+    "test:one": "mocha --watch -u bdd \"./src/test/**/test-*.js\" --grep \"test-login-form\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inavvilva/modified-electron-pos-printer.git"
+  },
+  "keywords": [
+    "'electron'",
+    "'printer'",
+    "'thermal'",
+    "'pos'"
+  ],
+  "author": "inav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inavvilva/modified-electron-pos-printer/issues"
+  },
+  "homepage": "https://github.com/inavvilva/modified-electron-pos-printer#readme"
+}
