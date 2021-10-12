@@ -1,9 +1,9 @@
 
-![License](https://img.shields.io/npm/l/electron-pos-printer)
+<!-- ![License](https://img.shields.io/npm/l/electron-pos-printer)
 ![Version](https://img.shields.io/npm/v/electron-pos-printer?label=version)
-![Issues](https://img.shields.io/github/issues/Hubertformin/electron-pos-printer)
+![Issues](https://img.shields.io/github/issues/Hubertformin/electron-pos-printer) -->
 
-# Electron-pos-printer
+# Modified-Electron-pos-printer
 An electron printer plugin, currently supports 58mm, 
 requires electron >= 4.x.x.
 
@@ -255,5 +255,5 @@ PosPrinter.print(data, options)
  - Inav
  - inavvilva@gmail.com
  
- [<img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" >](https://www.buymeacoffee.com/hformin)
+ <!-- [<img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" >](https://www.buymeacoffee.com/hformin) -->
  
