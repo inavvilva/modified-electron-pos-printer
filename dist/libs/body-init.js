@@ -57,7 +57,7 @@ async function renderDataToHTML(event, arg) {
                 event.sender.send('render-line-reply', {status: false, error: e.toString()});
             }
         return;
-        case 'DoublebarCode':
+        case 'DoubleBarCode':
             try {
                 body.append(`
                 <div >
@@ -107,7 +107,7 @@ async function renderDataToHTML(event, arg) {
                 event.sender.send('render-line-reply', {status: false, error: e.toString()});
             }
         return;
-        case 'twoLabelbarCode':
+        case 'oneInchDoubleBarCode':
             try {
                 body.append(`
                 <div >
@@ -147,7 +147,7 @@ async function renderDataToHTML(event, arg) {
                 event.sender.send('render-line-reply', {status: false, error: e.toString()});
             }
         return;
-        case 'SinglebarCode':
+        case 'SingleBarCode':
             try {
                 body.append(`
                 <div style="border: none;">
@@ -182,7 +182,7 @@ async function renderDataToHTML(event, arg) {
                 event.sender.send('render-line-reply', {status: false, error: e.toString()});
             }
         return;
-        case 'barCode':
+        case 'oneInchBarCode':
             try {
                 body.append(`
                 <div style="width:100%;font-family:Helvetica, sans-serif;display: flex;
@@ -273,12 +273,12 @@ async function renderDataToHTML(event, arg) {
                                         })
                                     return;
                                 case 'text':
-                                    rowTr.append(generateTableCell(colArg+"s its worrking"));
+                                    rowTr.append(generateTableCell(colArg));
                                     return;
                                 
                             }
                         } else {
-                            const th = $(`<td>${colArg}else part</td>`);
+                            const th = $(`<td>${colArg}</td>`);
                             rowTr.append(th);
                         }
                     });
