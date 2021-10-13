@@ -168,22 +168,21 @@ async function renderDataToHTML(event, arg) {
                         <td style="text-align:center;padding:16px;overflow:hidden" >
                         <div style="${arg.line.style}">
                         <p style="${arg.line.headerStyle2}">${arg.line.headerText2}</p>
-                        <img class="barCode${arg.lineIndex}2"  style="text-align:center;width:60%"
-                            jsbarcode-value="${arg.line.value2}"
-                            jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
-                            jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
-                            jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
-                            jsbarcode-margin="0"
-                            jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
-                            <p style="${arg.line.itemStyle2}">${arg.line.value2}</p>
-                            <p style="${arg.line.lineStyle2}">${arg.line.additionalText2}</p>
-                            <p style="${arg.line.footerStyle2}">${arg.line.footerText2}</p>
+                        <img class="barCode${arg.lineIndex}2" style="text-align:center;width:60%" 
+                        jsbarcode-value="${arg.line.value2}"
+                        jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
+                        jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
+                        jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
+                        jsbarcode-margin="0"
+                        jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
+                        <p style="${arg.line.itemStyle1}">${arg.line.value2}</p>
+                        <p style="${arg.line.lineStyle2}">${arg.line.additionalText2}</p>
+                        <p style="${arg.line.footerStyle2}">${arg.line.footerText2}</p>
                         </div>
                         </td>
                         </tr>
                 </table>
-                </div>
-   
+                </div>   
                 `);
                 JsBarcode(`.barCode${arg.lineIndex}1`).init();
                 JsBarcode(`.barCode${arg.lineIndex}2`).init();
@@ -258,6 +257,23 @@ async function renderDataToHTML(event, arg) {
                 JsBarcode(`.barCode${arg.lineIndex}`).init();
                 // send
 
+                event.sender.send('render-line-reply', {status: true, error: null});
+            } catch(e) {
+                event.sender.send('render-line-reply', {status: false, error: e.toString()});
+            }
+        return;
+        case 'barCode':
+            try {
+                body.append(`<div style="width: 100%;text-align: ${arg.line.position ? arg.line.position : 'left'}"class="barcode-container" style="text-align: center;width: 100%;">
+                    <img class="barCode${arg.lineIndex}"  style="${arg.line.style}"
+                jsbarcode-value="${arg.line.value}"
+                jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
+                jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
+                jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 12}"
+                jsbarcode-margin="0"
+                jsbarcode-displayvalue="${!!arg.line.displayValue}"/></div>`);
+                JsBarcode(`.barCode${arg.lineIndex}`).init();
+                // send
                 event.sender.send('render-line-reply', {status: true, error: null});
             } catch(e) {
                 event.sender.send('render-line-reply', {status: false, error: e.toString()});
