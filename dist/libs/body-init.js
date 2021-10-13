@@ -75,7 +75,7 @@ async function renderDataToHTML(event, arg) {
                         jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
                         jsbarcode-margin="0"
                         jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
-                        <p style="${arg.line.itemStyle1}">${arg.line.value1}</p>
+                        <p style="${arg.line.itemStyle1}">${arg.line.value1}1</p>
                         <p style="${arg.line.lineStyle1}">${arg.line.additionalText1}</p>
                         <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
                     </div>
@@ -88,7 +88,7 @@ async function renderDataToHTML(event, arg) {
                         jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
                         jsbarcode-margin="0"
                         jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
-                        <p style="${arg.line.itemStyle1}">${arg.line.value2}</p>
+                        <p style="${arg.line.itemStyle1}">${arg.line.value2}1</p>
                         <p style="${arg.line.lineStyle2}">${arg.line.additionalText2}</p>
                         <p style="${arg.line.footerStyle2}">${arg.line.footerText2}</p>
                     </div>
@@ -114,14 +114,14 @@ async function renderDataToHTML(event, arg) {
                         <td style="text-align:center;padding:16px;overflow:hidden;" > 
                         <div style="${arg.line.style}">
                         <p style="${arg.line.headerStyle1}">${arg.line.headerText1}</p>
-                            <img class="barCode${arg.lineIndex}1"  style="text-align:center;width:60%"
+                            <img class="barCode${arg.lineIndex}"  style="text-align:center;width:60%"
                         jsbarcode-value="${arg.line.value1}"
                         jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
                         jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
                         jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
                         jsbarcode-margin="0"
                         jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
-                        <p style="${arg.line.itemStyle1}">${arg.line.value1}</p>
+                        <p style="${arg.line.itemStyle1}">${arg.line.value1}2</p>
                         <p style="${arg.line.lineStyle1}">${arg.line.additionalText1}</p>
                         <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
                        </div>
@@ -136,8 +136,8 @@ async function renderDataToHTML(event, arg) {
                 </div>
    
                 `);
-                JsBarcode(`.barCode${arg.lineIndex}1`).init();
-                JsBarcode(`.barCode${arg.lineIndex}2`).init();
+                JsBarcode(`.barCode${arg.lineIndex}`).init();
+               
                 // send
 
                 event.sender.send('render-line-reply', {status: true, error: null});
@@ -161,7 +161,7 @@ async function renderDataToHTML(event, arg) {
                         jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
                         jsbarcode-margin="0"
                         jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
-                        <p style="${arg.line.itemStyle1}">${arg.line.value1}</p>
+                        <p style="${arg.line.itemStyle1}">${arg.line.value1}3</p>
                         <p style="${arg.line.lineStyle1}">${arg.line.additionalText1}</p>
                         <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
                        </div>
@@ -198,7 +198,7 @@ async function renderDataToHTML(event, arg) {
                         jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
                         jsbarcode-margin="0"
                         jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
-                        <p style="margin-top: -3px;font-size:6px">${arg.line.value1}</p>
+                        <p style="margin-top: -3px;font-size:6px">${arg.line.value1}4</p>
                         <p style="${arg.line.lineStyle1}">${arg.line.additionalText1}</p>
                         <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
                        </div>
