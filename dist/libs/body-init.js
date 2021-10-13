@@ -75,7 +75,7 @@ async function renderDataToHTML(event, arg) {
                         jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
                         jsbarcode-margin="0"
                         jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
-                        <p style="${arg.line.itemStyle1}">${arg.line.value1}1</p>
+                        <p style="${arg.line.itemStyle1}">${arg.line.value1}</p>
                         <p style="${arg.line.lineStyle1}">${arg.line.additionalText1}</p>
                         <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
                     </div>
@@ -88,7 +88,7 @@ async function renderDataToHTML(event, arg) {
                         jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
                         jsbarcode-margin="0"
                         jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
-                        <p style="${arg.line.itemStyle1}">${arg.line.value2}1</p>
+                        <p style="${arg.line.itemStyle1}">${arg.line.value2}</p>
                         <p style="${arg.line.lineStyle2}">${arg.line.additionalText2}</p>
                         <p style="${arg.line.footerStyle2}">${arg.line.footerText2}</p>
                     </div>
@@ -121,7 +121,7 @@ async function renderDataToHTML(event, arg) {
                         jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
                         jsbarcode-margin="0"
                         jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
-                        <p style="${arg.line.itemStyle1}">${arg.line.value1}2</p>
+                        <p style="${arg.line.itemStyle1}">${arg.line.value1}</p>
                         <p style="${arg.line.lineStyle1}">${arg.line.additionalText1}</p>
                         <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
                        </div>
@@ -137,7 +137,6 @@ async function renderDataToHTML(event, arg) {
    
                 `);
                 JsBarcode(`.barCode${arg.lineIndex}`).init();
-               
                 // send
 
                 event.sender.send('render-line-reply', {status: true, error: null});
@@ -161,7 +160,7 @@ async function renderDataToHTML(event, arg) {
                         jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
                         jsbarcode-margin="0"
                         jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
-                        <p style="${arg.line.itemStyle1}">${arg.line.value1}3</p>
+                        <p style="${arg.line.itemStyle1}">${arg.line.value1}</p>
                         <p style="${arg.line.lineStyle1}">${arg.line.additionalText1}</p>
                         <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
                        </div>
@@ -198,7 +197,7 @@ async function renderDataToHTML(event, arg) {
                         jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
                         jsbarcode-margin="0"
                         jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
-                        <p style="margin-top: -3px;font-size:6px">${arg.line.value1}4</p>
+                        <p style="margin-top: -3px;font-size:6px">${arg.line.value1}</p>
                         <p style="${arg.line.lineStyle1}">${arg.line.additionalText1}</p>
                         <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
                        </div>
