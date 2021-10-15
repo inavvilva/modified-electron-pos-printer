@@ -64,6 +64,95 @@ const data = [
       displayValue: true,             // Display value below barcode
       fontsize: 8,
    },{
+      type: 'DoubleBarCode',
+      value1 : 'HB4587896',
+      value2 : 'HB4587896',
+      height: 12,                     // height of barcode, applicable only to bar and QR codes
+      width: 1,                       // width of barcode, applicable only to bar and QR codes
+      displayValue: true,             // Display value below barcode
+      fontsize: 8,
+      headerText1:'Business Name',    // Optional
+      additionalText1:'Product Name', // Optional
+      footerText1:'MRP: ₹ 200',       // Optional
+      headerText2:'Business Name',    // Optional
+      additionalText2:'Product Name', // Optional
+      footerText2:'MRP: ₹ 400',       // Optional
+      style:`width:94px;heigth:56.6px;text-align:center;font-family:Helvetica, sans-serif;margin:2px;`,             
+      headerStyle1:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style     
+      itemStyle1:`margin-top: -3px;font-size:12px;`,                  // Value Style
+      lineStyle1:`margin-top: -8px;font-size:12px;`,                  // Additional text 1 style
+      footerStyle1:`margin-top: -10px;font-size:12px;`,                // Footer text 1 style
+      headerStyle2:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style  
+      lineStyle2:`margin-top: -8px;font-size:12px;`,                  // Additional text 2 style
+      footerStyle2:`margin-top: -10px;font-size:12px;`,                // Footer text 2 style
+   },{
+      type: 'oneInchDoubleSingleBarCode',
+      value1 : 'HB4587896',
+      height: 12,                     // height of barcode, applicable only to bar and QR codes
+      width: 1,                       // width of barcode, applicable only to bar and QR codes
+      displayValue: true,             // Display value below barcode
+      fontsize: 8,
+      headerText1:'Business Name',    // Optional
+      additionalText1:'Product Name', // Optional
+      footerText1:'MRP: ₹ 200',       // Optional
+      style:`width:94px;heigth:56.6px;text-align:center;font-family:Helvetica, sans-serif;margin:2px;`,             
+      headerStyle1:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style     
+      itemStyle1:`margin-top: -3px;font-size:12px;`,                  // Value Style
+      lineStyle1:`margin-top: -8px;font-size:12px;`,                  // Additional text 1 style
+      footerStyle1:`margin-top: -10px;font-size:12px;`,                // Footer text 1 style
+   },{
+      type: 'oneInchDoubleBarCode',
+      value1 : 'HB4587896',
+      value2 : 'HB4587896',
+      height: 12,                     // height of barcode, applicable only to bar and QR codes
+      width: 1,                       // width of barcode, applicable only to bar and QR codes
+      displayValue: true,             // Display value below barcode
+      fontsize: 8,
+      headerText1:'Business Name',    // Optional
+      additionalText1:'Product Name', // Optional
+      footerText1:'MRP: ₹ 200',       // Optional
+      headerText2:'Business Name',    // Optional
+      additionalText2:'Product Name', // Optional
+      footerText2:'MRP: ₹ 400',       // Optional
+      style:`width:94px;heigth:56.6px;text-align:center;font-family:Helvetica, sans-serif;margin:2px;`,             
+      headerStyle1:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style     
+      itemStyle1:`margin-top: -3px;font-size:12px;`,                  // Value Style
+      lineStyle1:`margin-top: -8px;font-size:12px;`,                  // Additional text 1 style
+      footerStyle1:`margin-top: -10px;font-size:12px;`,                // Footer text 1 style
+      headerStyle2:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style  
+      lineStyle2:`margin-top: -8px;font-size:12px;`,                  // Additional text 2 style
+      footerStyle2:`margin-top: -10px;font-size:12px;`,                // Footer text 2 style
+   },{
+      type: 'SingleBarCode',
+      value1 : 'HB4587896',
+      height: 12,                     // height of barcode, applicable only to bar and QR codes
+      width: 1,                       // width of barcode, applicable only to bar and QR codes
+      displayValue: true,             // Display value below barcode
+      fontsize: 8,
+      headerText1:'Business Name',    // Optional
+      additionalText1:'Product Name', // Optional
+      footerText1:'MRP: ₹ 200',       // Optional
+      style:`width:94px;heigth:56.6px;text-align:center;font-family:Helvetica, sans-serif;margin:2px;`,             
+      headerStyle1:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style     
+      itemStyle1:`margin-top: -3px;font-size:12px;`,                  // Value Style
+      lineStyle1:`margin-top: -8px;font-size:12px;`,                  // Additional text 1 style
+      footerStyle1:`margin-top: -10px;font-size:12px;`,                // Footer text 1 style
+   },{
+      type: 'oneInchBarCode',
+      value1 : 'HB4587896',
+      height: 12,                     // height of barcode, applicable only to bar and QR codes
+      width: 1,                       // width of barcode, applicable only to bar and QR codes
+      displayValue: true,             // Display value below barcode
+      fontsize: 8,
+      headerText1:'Business Name',    // Optional
+      additionalText1:'Product Name', // Optional
+      footerText1:'MRP: ₹ 200',       // Optional
+      style:`width:94px;heigth:56.6px;text-align:center;font-family:Helvetica, sans-serif;margin:2px;`,             
+      headerStyle1:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style     
+      itemStyle1:`margin-top: -3px;font-size:12px;`,                  // Value Style
+      lineStyle1:`margin-top: -8px;font-size:12px;`,                  // Additional text 1 style
+      footerStyle1:`margin-top: -10px;font-size:12px;`,                // Footer text 1 style
+   },{
      type: 'qrCode',
       value: 'https://github.com/Hubertformin/electron-pos-printer',
       height: 55,
@@ -163,6 +252,95 @@ const data: PosPrintData[] = [
       displayValue: true,             // Display value below barcode
       fontsize: 8,
    },{
+      type: 'DoubleBarCode',
+      value1 : 'HB4587896',
+      value2 : 'HB4587896',
+      height: 12,                     // height of barcode, applicable only to bar and QR codes
+      width: 1,                       // width of barcode, applicable only to bar and QR codes
+      displayValue: true,             // Display value below barcode
+      fontsize: 8,
+      headerText1:'Business Name',    // Optional
+      additionalText1:'Product Name', // Optional
+      footerText1:'MRP: ₹ 200',       // Optional
+      headerText2:'Business Name',    // Optional
+      additionalText2:'Product Name', // Optional
+      footerText2:'MRP: ₹ 400',       // Optional
+      style:`width:94px;heigth:56.6px;text-align:center;font-family:Helvetica, sans-serif;margin:2px;`,             
+      headerStyle1:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style     
+      itemStyle1:`margin-top: -3px;font-size:12px;`,                  // Value Style
+      lineStyle1:`margin-top: -8px;font-size:12px;`,                  // Additional text 1 style
+      footerStyle1:`margin-top: -10px;font-size:12px;`,                // Footer text 1 style
+      headerStyle2:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style  
+      lineStyle2:`margin-top: -8px;font-size:12px;`,                  // Additional text 2 style
+      footerStyle2:`margin-top: -10px;font-size:12px;`,                // Footer text 2 style
+   },{
+      type: 'oneInchDoubleSingleBarCode',
+      value1 : 'HB4587896',
+      height: 12,                     // height of barcode, applicable only to bar and QR codes
+      width: 1,                       // width of barcode, applicable only to bar and QR codes
+      displayValue: true,             // Display value below barcode
+      fontsize: 8,
+      headerText1:'Business Name',    // Optional
+      additionalText1:'Product Name', // Optional
+      footerText1:'MRP: ₹ 200',       // Optional
+      style:`width:94px;heigth:56.6px;text-align:center;font-family:Helvetica, sans-serif;margin:2px;`,             
+      headerStyle1:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style     
+      itemStyle1:`margin-top: -3px;font-size:12px;`,                  // Value Style
+      lineStyle1:`margin-top: -8px;font-size:12px;`,                  // Additional text 1 style
+      footerStyle1:`margin-top: -10px;font-size:12px;`,                // Footer text 1 style
+   },{
+      type: 'oneInchDoubleBarCode',
+      value1 : 'HB4587896',
+      value2 : 'HB4587896',
+      height: 12,                     // height of barcode, applicable only to bar and QR codes
+      width: 1,                       // width of barcode, applicable only to bar and QR codes
+      displayValue: true,             // Display value below barcode
+      fontsize: 8,
+      headerText1:'Business Name',    // Optional
+      additionalText1:'Product Name', // Optional
+      footerText1:'MRP: ₹ 200',       // Optional
+      headerText2:'Business Name',    // Optional
+      additionalText2:'Product Name', // Optional
+      footerText2:'MRP: ₹ 400',       // Optional
+      style:`width:94px;heigth:56.6px;text-align:center;font-family:Helvetica, sans-serif;margin:2px;`,             
+      headerStyle1:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style     
+      itemStyle1:`margin-top: -3px;font-size:12px;`,                  // Value Style
+      lineStyle1:`margin-top: -8px;font-size:12px;`,                  // Additional text 1 style
+      footerStyle1:`margin-top: -10px;font-size:12px;`,                // Footer text 1 style
+      headerStyle2:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style  
+      lineStyle2:`margin-top: -8px;font-size:12px;`,                  // Additional text 2 style
+      footerStyle2:`margin-top: -10px;font-size:12px;`,                // Footer text 2 style
+   },{
+      type: 'SingleBarCode',
+      value1 : 'HB4587896',
+      height: 12,                     // height of barcode, applicable only to bar and QR codes
+      width: 1,                       // width of barcode, applicable only to bar and QR codes
+      displayValue: true,             // Display value below barcode
+      fontsize: 8,
+      headerText1:'Business Name',    // Optional
+      additionalText1:'Product Name', // Optional
+      footerText1:'MRP: ₹ 200',       // Optional
+      style:`width:94px;heigth:56.6px;text-align:center;font-family:Helvetica, sans-serif;margin:2px;`,             
+      headerStyle1:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style     
+      itemStyle1:`margin-top: -3px;font-size:12px;`,                  // Value Style
+      lineStyle1:`margin-top: -8px;font-size:12px;`,                  // Additional text 1 style
+      footerStyle1:`margin-top: -10px;font-size:12px;`,                // Footer text 1 style
+   },{
+      type: 'oneInchBarCode',
+      value1 : 'HB4587896',
+      height: 12,                     // height of barcode, applicable only to bar and QR codes
+      width: 1,                       // width of barcode, applicable only to bar and QR codes
+      displayValue: true,             // Display value below barcode
+      fontsize: 8,
+      headerText1:'Business Name',    // Optional
+      additionalText1:'Product Name', // Optional
+      footerText1:'MRP: ₹ 200',       // Optional
+      style:`width:94px;heigth:56.6px;text-align:center;font-family:Helvetica, sans-serif;margin:2px;`,             
+      headerStyle1:`margin-bottom: 1px;font-size:12px;`,                // Header text 1 style     
+      itemStyle1:`margin-top: -3px;font-size:12px;`,                  // Value Style
+      lineStyle1:`margin-top: -8px;font-size:12px;`,                  // Additional text 1 style
+      footerStyle1:`margin-top: -10px;font-size:12px;`,                // Footer text 1 style
+   },{
      type: 'qrCode',
       value: 'https://github.com/Hubertformin/electron-pos-printer',
       height: 55,
@@ -237,6 +415,19 @@ PosPrinter.print(data, options)
 |-----------|:--------------|
 | type      | (string) 'text', 'qrCode', 'barCode', 'image', 'table' // type 'text' can be an html string |
 | value | (string) value of the current row |
+| value1 | (string) value of first Barcode |
+| value2 | (string) value of second Barcode |
+| headertext1 | (string) (Optional) |
+| headertext2 | (string) (Optional) |
+| additionaltext1 | (string) (Optional) |
+| additionaltext2 | (string) (Optional) |
+| footertext1 | (string) (Optional) |
+| footertext2 | (string) (Optional) |
+| headerstyle1 | (string)  styles, css rules can be used |
+| headerstyle2 | (string)  styles, css rules can be used |
+| linestyle1 | (string)  styles, css rules can be used |
+| linestyle2 | (string)  styles, css rules can be used |
+| itemstyle1 |  (string)  styles, css rules can be used |
 | height | (number) applicable to type barCode and qrCode |
 | width | (number)  applicable to type barCode and qrCode |
 | style | (string)  styles, css rules can be used |
