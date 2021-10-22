@@ -279,6 +279,19 @@ async function renderDataToHTML(event, arg) {
                 event.sender.send('render-line-reply', {status: false, error: e.toString()});
             }
         return;
+        case 'customBarcode':
+            try {
+                body.append(`
+                <div style="width: ${arg.customData.paperWidth}px;text-align: center;background:grey;" class="barcode-container" >
+                  ${arg.htmlContent}
+                  </div>`);
+                JsBarcode(`.barCode1`).init();
+                // send
+                event.sender.send('render-line-reply', {status: true, error: null});
+            } catch(e) {
+                event.sender.send('render-line-reply', {status: false, error: e.toString()});
+            }
+        return;
         case 'table':
             // Creating table
             const tableContainer = $(`
