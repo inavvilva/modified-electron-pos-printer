@@ -279,14 +279,82 @@ async function renderDataToHTML(event, arg) {
                 event.sender.send('render-line-reply', {status: false, error: e.toString()});
             }
         return;
-        case 'customBarcode':
+        case 'customDoubleBarcode':
             try {
                 body.append(`
-                <div style="width: ${arg.customData.paperWidth}px;text-align: center;background:grey;" class="barcode-container" >
-                  ${arg.htmlContent}
-                  </div>`);
-                JsBarcode(`.barCode1`).init();
+               
+                <div style="content: "";
+                display: table;
+                clear: both;
+                font-family:Helvetica, sans-serif;">
+                    <div style="${arg.line.style}">
+                        <p style="${arg.line.headerStyle1}">${arg.line.headerText1}</p>
+                        <img class="barCode${arg.lineIndex}1"  style="text-align:center;"
+                        jsbarcode-value="${arg.line.value1}"
+                        jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
+                        jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
+                        jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
+                        jsbarcode-margin="0"
+                        jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
+                        <p style="${arg.line.itemStyle1}">${arg.line.value1}</p>
+                        <p style="${arg.line.lineStyle1}">${arg.line.additionalText1}</p>
+                        <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
+                    </div>
+                    <div style="${arg.line.style}">
+                        <p style="${arg.line.headerStyle2}">${arg.line.headerText2}</p>
+                        <img class="barCode${arg.lineIndex}2" style="text-align:center;" 
+                        jsbarcode-value="${arg.line.value2}"
+                        jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
+                        jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
+                        jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
+                        jsbarcode-margin="0"
+                        jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
+                        <p >${arg.line.value2}</p>
+                        <p style="${arg.line.lineStyle2}">${arg.line.additionalText2}</p>
+                        <p style="${arg.line.footerStyle2}">${arg.line.footerText2}</p>
+                    </div>
+                    </div>
+               
+   
+                `);
+                JsBarcode(`.barCode${arg.lineIndex}1`).init();
+                JsBarcode(`.barCode${arg.lineIndex}2`).init();
                 // send
+
+                event.sender.send('render-line-reply', {status: true, error: null});
+            } catch(e) {
+                event.sender.send('render-line-reply', {status: false, error: e.toString()});
+            }
+        return;
+        case 'customSingleBarcode':
+            try {
+                body.append(`
+                <div style="width:100%;font-family:Helvetica, sans-serif;display: flex;
+                flex-direction: row;                
+                justify-content: center;
+                align-items: center;
+                text-align:center">
+               
+                        <div style="${arg.line.style}">
+                        <p style="${arg.line.headerStyle1}">${arg.line.headerText1}</p>
+                            <img class="barCode${arg.lineIndex}" style="text-align:center;width:50%"
+                        jsbarcode-value="${arg.line.value1}"
+                        jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
+                        jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
+                        jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
+                        jsbarcode-margin="0"
+                        jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
+                        <p style="margin-top: -3px;font-size:6px">${arg.line.value1}</p>
+                        <p style="${arg.line.lineStyle1}">${arg.line.additionalText1}</p>
+                        <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
+                       </div>
+                      
+                </div>
+   
+                `);
+                JsBarcode(`.barCode${arg.lineIndex}`).init();
+                // send
+
                 event.sender.send('render-line-reply', {status: true, error: null});
             } catch(e) {
                 event.sender.send('render-line-reply', {status: false, error: e.toString()});
