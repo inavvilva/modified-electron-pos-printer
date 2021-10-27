@@ -283,13 +283,13 @@ async function renderDataToHTML(event, arg) {
             try {
                 body.append(`
 
-                <div style="${arg.style.mainDivStyle}">
+                <div style="${arg.line.style.mainDivStyle}">
 
-                <div style="${arg.style.divStyle}">
+                <div style="${arg.line.style.divStyle}">
 
-                 <div style="${arg.style.innerDivStyle}">
+                 <div style="${arg.line.style.innerDivStyle}">
                         <p style="${arg.line.headerStyle1}">${arg.line.headerText1}</p>
-                        <img class="barCode${arg.lineIndex}1"  style="text-align:center;width:50%;"
+                        <img class="barCode${arg.lineIndex}1"  style="${arg.line.css}"
                         jsbarcode-value="${arg.line.value1}"
                         jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
                         jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
@@ -303,18 +303,18 @@ async function renderDataToHTML(event, arg) {
 
                 </div>
 
-                <div style="${arg.style.divStyle}">
+                <div style="${arg.line.style.divStyle}">
 
-                <div style="${arg.style.innerDivStyle}">
+                <div style="${arg.line.style.innerDivStyle}">
                         <p style="${arg.line.headerStyle2}">${arg.line.headerText2}</p>
-                        <img class="barCode${arg.lineIndex}2" style="text-align:center;width:50%;" 
+                        <img class="barCode${arg.lineIndex}2" style="${arg.line.css}" 
                         jsbarcode-value="${arg.line.value2}"
                         jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
                         jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
                         jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
                         jsbarcode-margin="0"
                         jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
-                        <p >${arg.line.value2}</p>
+                        <p style="${arg.line.itemStyle1}">${arg.line.value2}</p>
                         <p style="${arg.line.lineStyle2}">${arg.line.additionalText2}</p>
                         <p style="${arg.line.footerStyle2}">${arg.line.footerText2}</p>
                 </div>
@@ -337,11 +337,11 @@ async function renderDataToHTML(event, arg) {
         case 'customSingleBarcode':
             try {
                 body.append(`
-                <div style="${arg.style.mainDivStyle}">
-                 <div style="${arg.style.divStyle}">
+                <div style="${arg.line.style.mainDivStyle}">
+                 <div style="${arg.line.style.divStyle}">
                    <div style="${arg.style.innerDivStyle}">
                         <p style="${arg.line.headerStyle1}">${arg.line.headerText1}</p>
-                        <img class="barCode${arg.lineIndex}"  style="text-align:center;width:50%;"
+                        <img class="barCode${arg.lineIndex}"  style="${arg.line.css}"
                         jsbarcode-value="${arg.line.value1}"
                         jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
                         jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
