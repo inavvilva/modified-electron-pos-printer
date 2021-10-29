@@ -283,8 +283,8 @@ async function renderDataToHTML(event, arg) {
             try {
                 body.append(`
                  <div style="${arg.line.style.mainDivStyle}">
-                   <div style="display:inline-block;width:194px;height:157px;min-height:57px;overflow:hidden;">
-                    <div style="text-align:center;">
+                   <div  style="${arg.line.style.divStyle}">
+                    <div style="${arg.line.style.innerDivStyle}">
                         <p style="${arg.line.headerStyle1}">working</p>
                         <img class="barCode${arg.lineIndex}1"  style="text-align:center;width:60%"
                         jsbarcode-value="${arg.line.value1}"
@@ -298,8 +298,8 @@ async function renderDataToHTML(event, arg) {
                         <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
                      </div>
                    </div>
-                   <div style="display:inline-block;width:194px;height:157px;min-height:57px;overflow:hidden;">
-                        <div style="text-align:center;">
+                   <div style="${arg.line.style.divStyle}">
+                        <div style="${arg.line.style.innerDivStyle}">
                         <p style="${arg.line.headerStyle2}">${arg.line.headerText2}</p>
                         <img class="barCode${arg.lineIndex}2" style="text-align:center;width:60%" 
                         jsbarcode-value="${arg.line.value2}"
