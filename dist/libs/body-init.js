@@ -317,8 +317,6 @@ async function renderDataToHTML(event, arg) {
                                           
    
                 `);
-                JsBarcode(`.barCode${arg.lineIndex}1`).init();
-                JsBarcode(`.barCode${arg.lineIndex}2`).init();
                 JsBarcode(`.barCode${arg.lineIndex}3`).init();
                 JsBarcode(`.barCode${arg.lineIndex}4`).init();
                 // send
