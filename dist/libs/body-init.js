@@ -285,7 +285,7 @@ async function renderDataToHTML(event, arg) {
                  <div style="${arg.line.style.mainDivStyle}">
                    <div  style="${arg.line.style.divStyle}">
                     <div style="${arg.line.style.innerDivStyle}">
-                        <p style="${arg.line.headerStyle1}">working</p>
+                        <p style="${arg.line.headerStyle1}">${arg.line.headerText1}</p>
                         <img class="barCode${arg.lineIndex}1"  style="${arg.line.css}"
                         jsbarcode-value="${arg.line.value1}"
                         jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
