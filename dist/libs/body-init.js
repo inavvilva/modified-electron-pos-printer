@@ -282,12 +282,11 @@ async function renderDataToHTML(event, arg) {
         case 'customDoubleBarcode':
             try {
                 body.append(`
-                                 
                  <div style="${arg.line.style.mainDivStyle}">
                    <div  style="${arg.line.style.divStyle}">
                     <div style="${arg.line.style.innerDivStyle}">
                         <p style="${arg.line.headerStyle1}">${arg.line.headerText1}</p>
-                        <img class="barCode${arg.lineIndex}3"  style="text-align:center;"
+                        <img class="barCode${arg.lineIndex}1"  style="${arg.line.css}"
                         jsbarcode-value="${arg.line.value1}"
                         jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
                         jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
@@ -297,11 +296,12 @@ async function renderDataToHTML(event, arg) {
                         <p style="${arg.line.itemStyle1}">${arg.line.value1}</p>
                         <p style="${arg.line.lineStyle1}">${arg.line.additionalText1}</p>
                         <p style="${arg.line.footerStyle1}">${arg.line.footerText1}</p>
-                    </div>
-                    </div>
+                     </div>
+                   </div>
                    <div style="${arg.line.style.divStyle}">
+                        <div style="${arg.line.style.innerDivStyle}">
                         <p style="${arg.line.headerStyle2}">${arg.line.headerText2}</p>
-                        <img class="barCode${arg.lineIndex}4" style="text-align:center;" 
+                        <img class="barCode${arg.lineIndex}2" style="${arg.line.css}" 
                         jsbarcode-value="${arg.line.value2}"
                         jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
                         jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
@@ -311,14 +311,14 @@ async function renderDataToHTML(event, arg) {
                         <p style="${arg.line.itemStyle1}">${arg.line.value2}</p>
                         <p style="${arg.line.lineStyle2}">${arg.line.additionalText2}</p>
                         <p style="${arg.line.footerStyle2}">${arg.line.footerText2}</p>
+                        </div>
                     </div>
-                    </div>
-                    </div>
+                 </div>
                                           
    
                 `);
-                JsBarcode(`.barCode${arg.lineIndex}3`).init();
-                JsBarcode(`.barCode${arg.lineIndex}4`).init();
+                JsBarcode(`.barCode${arg.lineIndex}1`).init();
+                JsBarcode(`.barCode${arg.lineIndex}2`).init();
                 // send
 
                 event.sender.send('render-line-reply', {status: true, error: null});
