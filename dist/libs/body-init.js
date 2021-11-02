@@ -286,7 +286,7 @@ async function renderDataToHTML(event, arg) {
                    <div  style="${arg.line.style.divStyle}">
                     <div style="${arg.line.style.innerDivStyle}">
                         <p style="${arg.line.headerStyle1}">working</p>
-                        <img class="barCode${arg.lineIndex}1"  style="text-align:center;width:60%"
+                        <img class="barCode${arg.lineIndex}1"  style="${arg.line.css}"
                         jsbarcode-value="${arg.line.value1}"
                         jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
                         jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
@@ -301,7 +301,7 @@ async function renderDataToHTML(event, arg) {
                    <div style="${arg.line.style.divStyle}">
                         <div style="${arg.line.style.innerDivStyle}">
                         <p style="${arg.line.headerStyle2}">${arg.line.headerText2}</p>
-                        <img class="barCode${arg.lineIndex}2" style="text-align:center;width:60%" 
+                        <img class="barCode${arg.lineIndex}2"  style="${arg.line.css}"
                         jsbarcode-value="${arg.line.value2}"
                         jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
                         jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
