@@ -285,11 +285,11 @@ async function renderDataToHTML(event, arg) {
                  <div style="${arg.line.style.mainDivStyle}">
                    <div  style="${arg.line.style.divStyle}">
                     <div style="${arg.line.style.innerDivStyle}">
-                        <p style="${arg.line.headerStyle1}">${arg.line.headerText1}</p>
-                        <img class="barCode${arg.lineIndex}1"  style="${arg.line.css}"
+                        <p style="${arg.line.headerStyle1}">working</p>
+                        <img class="barCode${arg.lineIndex}1"  style="text-align:center;width:60%"
                         jsbarcode-value="${arg.line.value1}"
-                        jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
-                        jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
+                        jsbarcode-width="${1}"
+                        jsbarcode-height="${15}"
                         jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
                         jsbarcode-margin="0"
                         jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
@@ -301,10 +301,10 @@ async function renderDataToHTML(event, arg) {
                    <div style="${arg.line.style.divStyle}">
                         <div style="${arg.line.style.innerDivStyle}">
                         <p style="${arg.line.headerStyle2}">${arg.line.headerText2}</p>
-                        <img class="barCode${arg.lineIndex}2"  style="${arg.line.css}"
+                        <img class="barCode${arg.lineIndex}2" style="text-align:center;width:60%" 
                         jsbarcode-value="${arg.line.value2}"
-                        jsbarcode-width="${arg.line.width ? arg.line.width : 1}"
-                        jsbarcode-height="${arg.line.height ? arg.line.height : 15}"
+                        jsbarcode-width="${1}"
+                        jsbarcode-height="${15}"
                         jsbarcode-fontsize="${arg.line.fontsize ? arg.line.fontsize : 16}"
                         jsbarcode-margin="0"
                         jsbarcode-displayvalue="${!!arg.line.displayValue}"/>
