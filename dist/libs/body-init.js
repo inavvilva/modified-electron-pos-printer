@@ -470,7 +470,7 @@ function generatePageText(arg) {
     const text = arg.value;
     const css = arg.css;
     arg.style = arg.style ? arg.style : '';
-    const div = $(`<div class="font" style="${arg.style}">${text}</div>`);
+    const div = $(`<div style="${arg.style}">${text}</div>`);
     if (css) {
         for (const key in css) {
             const item = css[key];
