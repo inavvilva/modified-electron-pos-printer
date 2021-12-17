@@ -389,7 +389,7 @@ async function renderDataToHTML(event, arg) {
                                 return;
                         }
                     } else {
-                        const th = $(`<th>${headerArg}</th>`);
+                        const th = $(`<th style="${arg.line.tableHeaderStyle}">${headerArg}</th>`);
                         tHeader.append(th);
                     }
                 });
@@ -417,7 +417,7 @@ async function renderDataToHTML(event, arg) {
                                 
                             }
                         } else {
-                            const th = $(`<td>${colArg}</td>`);
+                            const th = $(`<td style="${arg.line.tableBodyStyle}">${colArg}</td>`);
                             rowTr.append(th);
                         }
                     });
@@ -444,7 +444,7 @@ async function renderDataToHTML(event, arg) {
                                 return;
                         }
                     } else {
-                        const footerTh = $(`<th>${footerArg}</th>`);
+                        const footerTh = $(`<th style="${arg.line.tableFooterStyle}">${footerArg}</th>`);
                         tFooter.append(footerTh);
                     }
                 });
