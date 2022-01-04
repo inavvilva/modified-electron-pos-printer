@@ -397,7 +397,7 @@ async function renderDataToHTML(event, arg) {
             // 2. Body
             if (arg.line.tableBody) {
                 arg.line.tableBody.forEach((bodyRow) => {
-                    const rowTr = $('<tr></tr>');
+                    const rowTr = $('<tr style="height: auto;"></tr>');
                     bodyRow.forEach(async (colArg, index) => {
                         if (typeof colArg === 'object') {
                             switch (colArg.type) {
