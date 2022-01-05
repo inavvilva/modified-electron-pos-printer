@@ -369,6 +369,100 @@ async function renderDataToHTML(event, arg) {
             const tHeader = $(`<thead style="${arg.line.tableHeaderStyle}"></thead>`);
             const tBody = $(`<tbody style="${arg.line.tableBodyStyle}"></tbody>`);
             const tFooter = $(`<tfoot style="${arg.line.tableFooterStyle}"></tfoot>`);
+
+            if(arg.line.custom){
+                // 1. Headers
+            if (arg.line.tableHeader) {
+                arg.line.tableHeader.forEach(async (headerArg, index) => {
+                    if (typeof headerArg === "object") {
+                        switch (headerArg.type) {
+                            case 'image':
+                                await getImageFromPath(headerArg)
+                                    .then(img => {
+                                        const th = $(`<th></th>`);
+                                        th.append(img);
+                                        tHeader.append(th);
+                                    }).catch((e) => {
+                                        event.sender.send('render-line-reply', {status: false, error: e.toString()});
+                                    })
+                                return;
+                            case 'text':
+                                tHeader.append(generateTableCell(headerArg, 'th'));
+                                return;
+                        }
+                    } else {
+                        let style = arg.line.tableHeaderStyle
+                        if(headerArg === 'Qty'){
+                         
+                            style = `${arg.line.tableHeaderStyle}text-align:center;`
+                        }
+                        else{
+                         
+                            style = `${arg.line.tableHeaderStyle}text-align:start;`
+                        }
+                        const th = $(`<th style="${style}">${headerArg}</th>`);
+                        
+                        tHeader.append(th);
+                    }
+                });
+            }
+            // 2. Body
+            if (arg.line.tableBody) {
+                arg.line.tableBody.forEach((bodyRow) => {
+                    const rowTr = $('<tr style="height: auto;"></tr>');
+                    bodyRow.forEach(async (colArg, index) => {
+                        if (typeof colArg === 'object') {
+                            switch (colArg.type) {
+                                case 'image':
+                                    await getImageFromPath(colArg)
+                                        .then(img => {
+                                            const th = $(`<td></td>`);
+                                            th.append(img);
+                                            rowTr.append(th);
+                                        }).catch((e) => {
+                                            event.sender.send('render-line-reply', {status: false, error: e.toString()});
+                                        })
+                                    return;
+                                case 'text':
+                                    rowTr.append(generateTableCell(colArg));
+                                    return;
+                                
+                            }
+                        } else {
+                            const th = $(`<td style="${arg.line.tableBodyStyle}">${colArg}</td>`);
+                            rowTr.append(th);
+                        }
+                    });
+                    tBody.append(rowTr);
+                });
+            }
+            // 3. Footer
+            if (arg.line.tableFooter) {
+                arg.line.tableFooter.forEach(async (footerArg, index) => {
+                    if (typeof footerArg === 'object') {
+                        switch (footerArg.type) {
+                            case 'image':
+                                await getImageFromPath(footerArg)
+                                    .then(img => {
+                                        const footerTh = $(`<th></th>`);
+                                        footerTh.append(img);
+                                        tFooter.append(footerTh);
+                                    }).catch((e) => {
+                                        event.sender.send('render-line-reply', {status: false, error: e.toString()});
+                                    })
+                                return;
+                            case 'text':
+                                tFooter.append(generateTableCell(footerArg, 'th'));
+                                return;
+                        }
+                    } else {
+                        const footerTh = $(`<th style="${arg.line.tableFooterStyle}">${footerArg}</th>`);
+                        tFooter.append(footerTh);
+                    }
+                });
+            }
+
+            }else{
             // 1. Headers
             if (arg.line.tableHeader) {
                 arg.line.tableHeader.forEach(async (headerArg, index) => {
@@ -449,6 +543,7 @@ async function renderDataToHTML(event, arg) {
                     }
                 });
             }
+        }
             // render table
             table.append(tHeader);
             table.append(tBody);
