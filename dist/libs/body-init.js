@@ -429,7 +429,16 @@ async function renderDataToHTML(event, arg) {
                                 
                             }
                         } else {
-                            const th = $(`<td style="${arg.line.tableBodyStyle}">${colArg}</td>`);
+                            let style = arg.line.tableBodyStyle
+                            if(index === 1){
+                              
+                                style = `${arg.line.tableBodyStyle}text-align:center;`
+                            }
+                            else{
+                             
+                                style = `${arg.line.tableBodyStyle}text-align:start;`
+                            }
+                            const th = $(`<td style="${style}">${colArg}</td>`);
                             rowTr.append(th);
                         }
                     });

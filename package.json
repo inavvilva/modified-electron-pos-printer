@@ -1,6 +1,6 @@
 {
   "name": "modified-electron-pos-printer",
-  "version": "1.3.11",
+  "version": "1.3.12",
   "description": "Electron thermal 58mm printer",
   "main": "dist/index.js",
   "devDependencies": {
